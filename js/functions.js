@@ -1,7 +1,9 @@
 (function() {
 
     var x = document.getElementById("demo");
- getLocation();
+    var container = document.getElementById('results');
+    var list = document.getElementById('resultsList');
+    getLocation();
  
 setTimeout(function(){ setBgMap(); }, 1000);
 setTimeout(function(){   document.getElementById('bodyZ').style.opacity = "1"; }, 1300);
@@ -19,11 +21,12 @@ function showPosition(position) {
     var xzt= position.coords.latitude; var xztt = position.coords.longitude;
 var request = {
     location: new google.maps.LatLng(xzt,xztt),
-    radius: '100000',
-	keyword:'telenor atm'
+    type:'atm',
+    radius: '10000000',
+	keyword:'telenor'
 };
-var container = document.getElementById('results');
-var list = document.getElementById('resultsList');
+
+
 var service = new google.maps.places.PlacesService(container);
 service.nearbySearch(request, callback);
 function callback(results, status) {
@@ -51,7 +54,7 @@ function callback(results, status) {
     });
     
             container.innerHTML += '&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|' + results[i].geometry.location.lat()+', '+results[i].geometry.location.lng();
-             list.innerHTML += '<li> <b> place_name:</b> '+ results[i].name + '</br> <b>place_coordinates:</b>  ' + results[i].geometry.location.lat()+', '+results[i].geometry.location.lng() + " <br> <b>Place_id: </b> " + results[i].id   + '<br> <b>Place_adress: </b>' + results[i].vicinity + '<br> <b>Distance from user location: </b>' +distance+' m' + '<hr> <b>Static map: </b> <img src="https://maps.google.com/maps/api/staticmap?center=' + results[i].geometry.location.lat()+', '+results[i].geometry.location.lng() + '&maptype=roadmap&zoom=14&size=320x200&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|'+ results[i].geometry.location.lat()+', '+results[i].geometry.location.lng()  +'&key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U'  + '"></li><hr>';
+             list.innerHTML += '<li style="font-family: "MyriadProLight";"> <b> place_name:</b> '+ results[i].name + '</br> <b>place_coordinates:</b>  ' + results[i].geometry.location.lat()+', '+results[i].geometry.location.lng() + " <br> <b>Place_id: </b> " + results[i].id   + '<br> <b>Place_adress: </b>' + results[i].vicinity + '<br> <b>Distance from user location: </b>' +distance+' m' + '<hr> <b>Static map: </b> <img src="https://maps.google.com/maps/api/staticmap?center=' + results[i].geometry.location.lat()+', '+results[i].geometry.location.lng() + '&maptype=roadmap&zoom=14&size=200x200&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|'+ results[i].geometry.location.lat()+', '+results[i].geometry.location.lng()  +'&key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U'  + '"></li><hr>';
             
             }
             document.getElementById('help1').innerHTML=JSON.stringify(employees);
@@ -129,7 +132,7 @@ function setBgMap() {
         
     
         
-        buffer+= '<li> <b> place_name:</b> '+ item.placeName + '</br> <b>place_coordinates:</b>  ' + item.placeCoordinates + " <br> <b>Place_id: </b> " + item.placeId   + '<br> <b>Place_adress: </b>' + item.placeAdress + '<br> <b>Distance from user location: </b>' +item.placeDistanceFromUserLocation+' m <hr> <b>Static map: </b> <img src="https://maps.google.com/maps/api/staticmap?center=' + item.placeCoordinates + '&maptype=roadmap&zoom=14&size=320x200&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|' + item.placeCoordinates + '&key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U'  + '"></li><hr>';
+        buffer+= '<li style="font-family: "MyriadProLight";"> <b> place_name:</b> '+ item.placeName + '</br> <b>place_coordinates:</b>  ' + item.placeCoordinates + " <br> <b>Place_id: </b> " + item.placeId   + '<br> <b>Place_adress: </b>' + item.placeAdress + '<br> <b>Distance from user location: </b>' +item.placeDistanceFromUserLocation+' m <hr> <b>Static map: </b> <img src="https://maps.google.com/maps/api/staticmap?center=' + item.placeCoordinates + '&maptype=roadmap&zoom=14&size=200x200&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|' + item.placeCoordinates + '&key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U'  + '"></li><hr>';
       } 
          
          
@@ -152,7 +155,7 @@ function sortingDsc(){
         
     
         
-        buffer+= '<li> <b> place_name:</b> '+ item.placeName + '</br> <b>place_coordinates:</b>  ' + item.placeCoordinates + " <br> <b>Place_id: </b> " + item.placeId   + '<br> <b>Place_adress: </b>' + item.placeAdress + '<br> <b>Distance from user location: </b>' +item.placeDistanceFromUserLocation+' m<hr> <b>Static map: </b> <img src="https://maps.google.com/maps/api/staticmap?center=' + item.placeCoordinates + '&maptype=roadmap&zoom=14&size=320x200&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|' + item.placeCoordinates + '&key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U'  + '"></li><hr>';
+        buffer+= '<li style="font-family: "MyriadProLight";"> <b> place_name:</b> '+ item.placeName + '</br> <b>place_coordinates:</b>  ' + item.placeCoordinates + " <br> <b>Place_id: </b> " + item.placeId   + '<br> <b>Place_adress: </b>' + item.placeAdress + '<br> <b>Distance from user location: </b>' +item.placeDistanceFromUserLocation+' m<hr> <b>Static map: </b> <img src="https://maps.google.com/maps/api/staticmap?center=' + item.placeCoordinates + '&maptype=roadmap&zoom=14&size=200x200&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|' + item.placeCoordinates + '&key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U'  + '"></li><hr>';
       } 
          
          document.getElementById('resultsList').innerHTML=buffer;
