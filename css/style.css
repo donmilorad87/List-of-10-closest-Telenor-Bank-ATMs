@@ -1,4 +1,4 @@
-  @font-face {
+@font-face {
     font-family: 'MyriadProLight';
     src: url('fonts/myriadpro-light-webfont.eot');
     src: url('fonts/myriadpro-light-webfont.eot?#iefix') format('embedded-opentype'),
@@ -13,8 +13,9 @@ body{opacity:0; transition:0.66s;}
 h3{font-family: 'MyriadProLight';}
 .buttonSort{float: right;margin-right: 20px; border:2px solid rgba(6,4,3,0.1); border-radius:4px; padding:8px 16px; cursor:pointer; transition:0.2s; color:rgba(6,4,3,0.6);  font-family: 'MyriadProLight'; background:white;}
 .buttonSort:hover{pointer:cursor; border:2px solid rgba(6,4,3,0.3); color:rgba(6,4,3,0.8); }
-#resultsList{font-family: 'MyriadProLight'; position:relative; top:16px; height:100%;width:440px; max-width:80%; position:relative; top:16px; }
+#resultsList{font-family: 'MyriadProLight'; position:relative; top:16px; height:100%;width:100%;  font-size:1em; position:relative; top:16px; }
  #demo{ font-family: 'MyriadProLight';}
-.leftDiv{display:block;position:relative;width: 400px;}
+.leftDiv{display:block;position:relative; width: 400px; max-width:100%!important;}
 .rightDiv{float:right; height:100%;position:relative; margin-bottom:32px;}
 .rightHelpZ{width:100%; position:relative; z-index:11;}
+#resultsList li{font-family: 'MyriadProLight';}
