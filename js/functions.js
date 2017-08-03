@@ -5,22 +5,7 @@
       }
             )();
  
- function handler(location) {
-    var ll, url;
-var zumbulkovic = document.getElementById('results').innerHTML;
- 
- var str = zumbulkovic;
-    var res = str.replace(/amp;/g, "");
- 
- 
- var accuracy = location.coords.accuracy;
-
-    ll = [location.coords.latitude, location.coords.longitude].join(',');
-    
-    document.getElementById('demo').innerHTML ='User current cordinates: <br> Latitude: ' + location.coords.latitude + '<br> Longitude: ' + location.coords.longitude +'<br> Aaccuracy ≈ ' + accuracy +' m' ;
-	url = "https://maps.google.com/maps/api/staticmap?center=" + ll + "&maptype=roadmap&zoom=8&size=320x600&markers=" + ll + '' + res +"&key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U";
-    document.getElementById('sirakuza').setAttribute("src", url);
-}   
+   
 function setBgMap() {
     navigator.geolocation.getCurrentPosition(handler);
 }
