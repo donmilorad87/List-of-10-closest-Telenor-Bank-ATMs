@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+    <title>Qantox test</title> 
+    <meta name="description" content="Qantox front-end test"> 
+    <meta name="author" content="Milorad Djukovic">
+    <!--[if lt IE 9]> <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body id="bodyZ">
+    <p id="help1" style="display:none;">
+    </p>
+    <div id="results" style="display:none;">
+    </div>
+    <div class="rightDiv">
+      <div> 
+        <div class="buttonSort" id="sortingAsc"> Sort by distance - Asc</div> 
+        <div class="buttonSort" id="sortingDsc"> Sort by distance - Dsc</div> 
+      </div>
+      <ol class="orderedL" id="resultsList">
+      </ol> 
+    </div>
+    <div class="leftDiv"> 
+      <center>
+        <h3> List of 10 closest "Telenor ATMs"
+        </h3> 
+        <img id="sirakuza"> 
+        <p id="demo">
+        </p>
+      </center> 
+    </div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&amp;key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U" type="text/javascript"> </script>
+    <script type="text/javascript" src="js/functions.js?v=d41d8cd98f00b204e9800998ecf8427e"></script>
+  </body>
+</html>
