@@ -1,23 +1,19 @@
- (function(){
-        getLocation();
-        setTimeout(function(){setBgMap();}, 1000);
-        setTimeout(function(){document.getElementById('bodyZ').style.opacity="1";}, 1500);
-      }
-            )();
+(function() {
+
+    var x = document.getElementById("demo");
+ getLocation();
  
-   
-function setBgMap() {
-    navigator.geolocation.getCurrentPosition(handler);
-}
+setTimeout(function(){ setBgMap(); }, 1000);
+setTimeout(function(){   document.getElementById('bodyZ').style.opacity = "1"; }, 1300);
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else { 
-        document.getElementById("demo").innerHTML = "Geolocation is not supported by this browser.";
+        x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
 function showPosition(position) {
-    document.getElementById("demo").innerHTML = 'User HTML5 curent: ' + position.coords.latitude + ", " + position.coords.longitude;
+    x.innerHTML = 'User HTML5 curent: ' + position.coords.latitude + ", " + position.coords.longitude;
     
     var zukorlazovic =document.getElementById("demo").innerHTML;
     var xzt= position.coords.latitude; var xztt = position.coords.longitude;
@@ -64,8 +60,63 @@ function callback(results, status) {
     }
 }
 }
+})();
+ 
 
-document.getElementById("sortingAsc").addEventListener("click", function(){
+var button_element1 = document.getElementById('sortingAsc');
+ var button_element2 = document.getElementById('sortingDsc');
+ 
+var onclick = button_element1.getAttribute("onclick");  
+
+// if onclick is not a function, it's not IE7, so use setAttribute
+if(typeof(onclick) != "function") { 
+    button_element1.setAttribute('onclick','sortingAsc();' + onclick); // for FF,IE8,Chrome
+
+// if onclick is a function, use the IE7 method and call onclick() in the anonymous function
+} else {
+    button_element1.onclick = function() { 
+       sortingAsc();
+        onclick();
+    }; // for IE7
+}
+
+var onclick = button_element2.getAttribute("onclick");  
+
+// if onclick is not a function, it's not IE7, so use setAttribute
+if(typeof(onclick) != "function") { 
+    button_element2.setAttribute('onclick','sortingDsc();' + onclick); // for FF,IE8,Chrome
+
+// if onclick is a function, use the IE7 method and call onclick() in the anonymous function
+} else {
+    button_element2.onclick = function() { 
+        sortingDsc();
+        onclick();
+    }; // for IE7
+}
+
+
+		
+  function handler(location) {
+    var ll, url;
+var zumbulkovic = document.getElementById('results').innerHTML;
+ 
+ var str = zumbulkovic;
+    var res = str.replace(/amp;/g, "");
+ 
+ 
+ var accuracy = location.coords.accuracy;
+		console.log(accuracy);
+	
+    ll = [location.coords.latitude, location.coords.longitude].join(',');
+    
+    document.getElementById('demo').innerHTML ='User current cordinates: <br> Latitude: ' + location.coords.latitude + '<br> Longitude: ' + location.coords.longitude +'<br> Aaccuracy ≈ ' + accuracy +' m' ;
+	url = "https://maps.google.com/maps/api/staticmap?center=" + ll + "&maptype=roadmap&zoom=8&size=320x600&markers=" + ll + '' + res +"&key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U";
+    document.getElementById('sirakuza').setAttribute("src", url);
+}   
+function setBgMap() {
+    navigator.geolocation.getCurrentPosition(handler);
+}
+ function sortingAsc(){
       var miler2 = JSON.parse(document.getElementById('help1').innerHTML);
     miler2.sort( predicateBy("placeDistanceFromUserLocation") );
     
@@ -83,10 +134,10 @@ document.getElementById("sortingAsc").addEventListener("click", function(){
          
          
          document.getElementById('resultsList').innerHTML=buffer;
-});
+}
 
 
-document.getElementById("sortingDsc").addEventListener("click", function(){
+function sortingDsc(){
     var miler = JSON.parse(document.getElementById('help1').innerHTML);
      
     miler.sort( predicateBy("placeDistanceFromUserLocation") );
@@ -105,7 +156,7 @@ document.getElementById("sortingDsc").addEventListener("click", function(){
       } 
          
          document.getElementById('resultsList').innerHTML=buffer;
-});
+}
 
 
 function predicateBy(prop){
