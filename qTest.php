@@ -128,15 +128,12 @@ function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
     var employees1 = [];
        var employees2 = [];
-      console.log('rez '+results.length);
+     
       document.getElementById('results4').innerHTML=JSON.stringify(results);
         for (var i = 0; i < results.length; i++) {
-         
-  console.log(results[i]);
   
         (function IIFE(){
             var j = i;
-            console.log(j);
             if (j<10){
                 
                 
@@ -151,7 +148,7 @@ function callback(results, status) {
         "placeId"       : results[i].id,
         "placeAdress"       : results[i].vicinity,
         "placeDistanceFromUserLocation"       : distance
-    }); 
+    });
        
              employees2.push({ 
         "placeName" : results[i].name,
@@ -161,7 +158,7 @@ function callback(results, status) {
         "placeDistanceFromUserLocation"       : distance
     });
             container.innerHTML += '&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|' + results[i].geometry.location.lat()+', '+results[i].geometry.location.lng();
-             list.innerHTML += '<li> <b> place_name:</b> '+ results[i].name + '</br> <b>place_coordinates:</b>  ' + results[i].geometry.location.lat()+', '+results[i].geometry.location.lng() + " <br> <b>Place_id: </b> " + results[i].id   + '<br> <b>Place_adress: </b>' + results[i].vicinity + '<br> <b>Distance from user location: </b>' +distance+' m' + '<hr> <b>Static map: </b> <img src="https://maps.google.com/maps/api/staticmap?center=' + results[i].geometry.location.lat()+', '+results[i].geometry.location.lng() + '&maptype=roadmap&zoom=16&size=200x200&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|'+ results[i].geometry.location.lat()+', '+results[i].geometry.location.lng()  +'&key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U'  + '"></li><hr>';
+             list.innerHTML += '<li> <b> place_name:</b> '+ results[i].name + '</br> <b>place_coordinates:</b>  ' + results[i].geometry.location.lat()+', '+results[i].geometry.location.lng() + " <br> <b>Place_id: </b> " + results[i].id   + '<br> <b>Place_adress: </b>' + results[i].vicinity + '<br> <b>Distance from user location: </b>' +distance+' m' + '<hr> <b>Static map: </b> <img src="https://maps.google.com/maps/api/staticmap?center=' + results[i].geometry.location.lat()+', '+results[i].geometry.location.lng() + '&maptype=roadmap&zoom=16&size=200x200&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|'+ results[i].geometry.location.lat()+', '+results[i].geometry.location.lng()  +'&style=feature:road.local%7Celement:geometry.fill%7Ccolor:0x96ca3a&style=feature:road.arterial%7Celement:geometry.fill%7Ccolor:0x96ca3a&key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U'  + '"></li><hr>';
             
             
         
@@ -278,8 +275,8 @@ window.onload = function(){
 setTimeout(function(){ document.getElementById('backgroundDiv').style.opacity='0';
 document.getElementById('loadingDiv').style.opacity='0';
 document.getElementById('mainDiv').style.opacity='1'; 
-  document.getElementById("changeSite").style.marginTop = "-40px";  
-    
+  document.getElementById("changeSite").style.marginTop = "10px";  
+    document.getElementById("changeSite").style.marginBottom = "10px";  
     document.getElementById('generateClusteringMpainz').style.opacity='1'; 
 }, 3000);
 
