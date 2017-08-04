@@ -70,8 +70,8 @@ if (isset($_SERVER['HTTP_COOKIE'])) {
   <div style="float:right; height:100%;position:relative; margin-bottom:32px; overflow:hidden; padding-right: 16px;">
     <div style="width:100%; position:relative; z-index:11; margin-bottom: 3em;">
         
-        <button style="float: right; font-size:14px; width:100%;margin-bottom:1em; border-radius:0.25em;" id="sortingAsc"> Sort by distance - Asc</button>
-        <button style="float: right; font-size:14px; width:100%;margin-bottom:1em; border-radius:0.25em; " id="sortingDsc"> Sort by distance - Dsc</button>
+        <button class="buttonSort" style="float: right; font-size:14px; width:100%;margin-bottom:1em; border-radius:0.25em;" id="sortingAsc"> Sort by distance - Asc</button>
+        <button class="buttonSort"  style="float: right; font-size:14px; width:100%;margin-bottom:1em; border-radius:0.25em; " id="sortingDsc"> Sort by distance - Dsc</button>
         
     </div>
   <ol id="resultsList" style=""></ol>
@@ -81,7 +81,7 @@ if (isset($_SERVER['HTTP_COOKIE'])) {
     
         <h3> List of 10 closest "Telenor ATMs"
         </h3> 
-        <img id="sirakuza"> 
+        <img id="sirakuza" style="border:2px solid #96ca3a;"> 
         <p id="demo">
         </p>
     
@@ -89,8 +89,8 @@ if (isset($_SERVER['HTTP_COOKIE'])) {
     
     </div>
     <div style="width:100%; float:left; opacity:0;" id="generateClusteringMpainz">
-  <input type="button" value="Generate cluster map" class="changeSite" id="changeSite" onClick="setMapCluster()" />
-<iframe id="myIframe" src="https://www.slepsluzbabeograd.net/" scrolling="yes" onLoad="iframeDidLoad();" onclick="makeCluster()"></iframe>
+  <input type="button" value="Generate cluster map" class="changeSite buttonSort" id="changeSite" onClick="setMapCluster()" />
+<iframe id="myIframe" src="https://mile.cloud-industry.com/clusterMap/index.html" scrolling="yes" onLoad="iframeDidLoad();" onclick="makeCluster()"></iframe>
   </div>  
 
   <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&amp;key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U" type="text/javascript"> </script>
@@ -158,7 +158,7 @@ function callback(results, status) {
         "placeDistanceFromUserLocation"       : distance
     });
             container.innerHTML += '&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|' + results[i].geometry.location.lat()+', '+results[i].geometry.location.lng();
-             list.innerHTML += '<li> <b> place_name:</b> '+ results[i].name + '</br> <b>place_coordinates:</b>  ' + results[i].geometry.location.lat()+', '+results[i].geometry.location.lng() + " <br> <b>Place_id: </b> " + results[i].id   + '<br> <b>Place_adress: </b>' + results[i].vicinity + '<br> <b>Distance from user location: </b>' +distance+' m' + '<hr> <b>Static map: </b> <img src="https://maps.google.com/maps/api/staticmap?center=' + results[i].geometry.location.lat()+', '+results[i].geometry.location.lng() + '&maptype=roadmap&zoom=16&size=200x200&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|'+ results[i].geometry.location.lat()+', '+results[i].geometry.location.lng()  +'&style=feature:road.local%7Celement:geometry.fill%7Ccolor:0x96ca3a&style=feature:road.arterial%7Celement:geometry.fill%7Ccolor:0x96ca3a&key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U'  + '"></li><hr>';
+             list.innerHTML += '<li> <b> place_name:</b><span>  '+ results[i].name + '</span> </br> <b>place_coordinates:</b> <span>  ' + results[i].geometry.location.lat()+', '+results[i].geometry.location.lng() + " </span> <br> <b>Place_id: </b> <span> " + results[i].id   + '</span> <br> <b>Place_adress: </b><span> ' + results[i].vicinity + '</span> <br> <b>Distance from user location: </b><span> ' +distance+' m</span> ' + '<hr> <b>Static map: </b> <img src="https://maps.google.com/maps/api/staticmap?center=' + results[i].geometry.location.lat()+', '+results[i].geometry.location.lng() + '&maptype=roadmap&zoom=16&size=200x200&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|'+ results[i].geometry.location.lat()+', '+results[i].geometry.location.lng()  +'&style=feature:road.local%7Celement:geometry.fill%7Ccolor:0x96ca3a&style=feature:road.arterial%7Celement:geometry.fill%7Ccolor:0x96ca3a&key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U'  + '"></li><hr>';
             
             
         
@@ -268,7 +268,7 @@ window.onload = function(){
   
   
   
-    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="js/functions26.js"></script>
  <script>
            
   
