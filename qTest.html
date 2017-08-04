@@ -8,9 +8,44 @@
     <meta name="description" content="Qantox front-end test"> 
     <meta name="author" content="Milorad Djukovic">
     <!--[if lt IE 9]> <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+     <style>
+      
+      #loading {
+		-webkit-animation: rotation 2s infinite linear;
+}
+
+#loading2 {
+		-webkit-animation: rotation2 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}
+@-webkit-keyframes rotation2 {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(-359deg);
+		}
+}      
+  </style>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   </head>
   <body id="bodyZ">
+      <div id="backgroundDiv" style="width:100vw; height:100vh; background:white; position:absolute; z-index:10; opacity:1; transition:0.33s;"></div>
+      <div id="loadingDiv" style="display: block; width: 100px; height: 100px;position:absolute; z-index:11; transition: 0.33s 0.33s; top: 375px; left: 910px; opacity: 1; ">
+          <img id="loading" src="https://quantox.com/assets/favicons/favicon-32x32.png"  
+          style="top:74px;  width: 36px; position: relative; left: 38px; -webkit-animation: rotation 2s infinite cubic-bezier( 1, 0.11, 0.6, 0.45);">
+          <i class="fa fa-spinner" id="loading2" aria-hidden="true" style=" font-size: 100px; font-weight: 100; position: relative; left: 8px; color: #96ca3a; "></i>
+          </div>
+      <div class="mainDiv" id="mainDiv" style="opacity:0; transition:0.66s;">
     <p id="help1" style="display:none;">
     </p>
     <div id="results" style="display:none;">
@@ -34,7 +69,17 @@
         </p>
     
     </div>
+    </div>
     <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&amp;key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U" type="text/javascript"> </script>
     <script type="text/javascript" src="js/functions.js"></script>
+    <script>
+        
+        (function() {
+setTimeout(function(){ document.getElementById('backgroundDiv').style.opacity='0';
+document.getElementById('loadingDiv').style.opacity='0';
+document.getElementById('mainDiv').style.opacity='1'; }, 3000);
+
+})();
+    </script>
   </body>
 </html>
