@@ -23,7 +23,7 @@
 				-webkit-transform: rotate(0deg);
 		}
 		to {
-				-webkit-transform: rotate(359deg);
+				-webkit-transform: rotate(360deg);
 		}
 }
 @-webkit-keyframes rotation2 {
@@ -31,7 +31,7 @@
 				-webkit-transform: rotate(0deg);
 		}
 		to {
-				-webkit-transform: rotate(-359deg);
+				-webkit-transform: rotate(-360deg);
 		}
 }      
   </style>
@@ -40,9 +40,9 @@
   </head>
   <body id="bodyZ">
       <div id="backgroundDiv" style="width:100vw; height:100vh; background:white; position:absolute; z-index:10; opacity:1; transition:0.33s;"></div>
-      <div id="loadingDiv" style="display: block; width: 100px; height: 100px;position:absolute; z-index:11; transition: 0.33s 0.33s; top: 45vh; left: 45vw; opacity: 1; ">
-          <img id="loading" src="https://quantox.com/assets/favicons/favicon-32x32.png"  
-          style="top:74px;  width: 36px; position: relative; left: 38px; -webkit-animation: rotation 2s infinite cubic-bezier( 1, 0.11, 0.6, 0.45);">
+      <div id="loadingDiv" style="display: block; width: 100px; height: 100px;position:absolute; z-index:11; transition: 0.33s 0.33s;top: calc(50vh - 100px) ;left: calc(50vw - 50px); opacity: 1; ">
+          <img id="loading" src="https://quantox.com/assets/favicons/favicon-96x96.png"  
+          style="top:72px;  width: 36px; position: relative; left: 38px; -webkit-animation: rotation 2s infinite cubic-bezier( 1, 0.11, 0.6, 0.45);">
           <i class="fa fa-spinner" id="loading2" aria-hidden="true" style=" font-size: 100px; font-weight: 100; position: relative; left: 8px; color: #96ca3a; "></i>
           </div>
       <div class="mainDiv" id="mainDiv" style="opacity:0; transition:0.66s;">
@@ -51,11 +51,11 @@
  
     <div id="results" style="display:none;">
     </div>
-  <div style="float:right; height:100%;position:relative; margin-bottom:32px; overflow:hidden;">
-    <div style="width:100%; position:relative; z-index:11;">
+  <div style="float:right; height:100%;position:relative; margin-bottom:32px; overflow:hidden; ">
+    <div style="width:100%; position:relative; z-index:11; margin-bottom: 3em;">
         
-        <button style="float: right;margin-right: 20px;" id="sortingAsc"> Sort by distance - Asc</button>
-        <button style="float: right;margin-right: 20px;" id="sortingDsc"> Sort by distance - Dsc</button>
+        <button style="float: right;margin-right: 20px; font-size:14px; border-radius:4px;" id="sortingAsc"> Sort by distance - Asc</button>
+        <button style="float: right;margin-right: 20px;font-size:14px;border-radius:4px; " id="sortingDsc"> Sort by distance - Dsc</button>
         
     </div>
   <ol id="resultsList" style=""></ol>
@@ -72,6 +72,9 @@
     </div>
     
     </div>
+  <input type="button" value="Change site" class="changeSite" onClick="newSite()" />
+<iframe id="myIframe" src="https://mile.cloud-industry.com/clusterMap/index.html" scrolling="yes"></iframe>
+    
 
   <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&amp;key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U" type="text/javascript"> </script>
   <script type="text/javascript">
