@@ -9,13 +9,41 @@
     font-style: normal;
 
 }
-body{opacity:0; transition:0.66s;}
-h3{font-family: 'MyriadProLight';}
-.buttonSort{float: right;margin-right: 20px; border:2px solid rgba(6,4,3,0.1); border-radius:4px; padding:8px 16px; cursor:pointer; transition:0.2s; color:rgba(6,4,3,0.6);  font-family: 'MyriadProLight'; background:white;}
+body{ transition:0.66s;
+    overflow-x:hidden;
+    font-family: -apple-system, "San Francisco", "Helvetica Neue", Helvetica, “Lucida Grande”, Roboto, “Segoe UI”, Arial, Ubuntu, sans-serif;
+}
+h3{font-family: 'MyriadProLight'; font-family: -apple-system, "San Francisco", "Helvetica Neue", Helvetica, “Lucida Grande”, Roboto, “Segoe UI”, Arial, Ubuntu, sans-serif;}
+.buttonSort{float: right;margin-right: 20px; border:2px solid rgba(6,4,3,0.1); border-radius:4px; padding:0.5em 1em; cursor:pointer; transition:0.2s; color:rgba(6,4,3,0.6);  font-family: 'MyriadProLight'; background:white;}
 .buttonSort:hover{pointer:cursor; border:2px solid rgba(6,4,3,0.3); color:rgba(6,4,3,0.8); }
-#resultsList{font-family: 'MyriadProLight'; position:relative; top:16px; height:100%;width:100%;  font-size:1em; position:relative; top:16px; }
+#resultsList{font-family: 'MyriadProLight';   font-size:0.9em;font-family: -apple-system, "San Francisco", "Helvetica Neue", Helvetica, “Lucida Grande”, Roboto, “Segoe UI”, Arial, Ubuntu, sans-serif;}
  #demo{ font-family: 'MyriadProLight';}
-.leftDiv{display:block;position:relative; width: 400px; max-width:100%!important;}
+.leftDiv{padding-left: 16px;display:block;position:relative; width: 400px; max-width:100%!important;}
 .rightDiv{float:right; height:100%;position:relative; margin-bottom:32px;}
 .rightHelpZ{width:100%; position:relative; z-index:11;}
 #resultsList li{font-family: 'MyriadProLight';}
+#myIframe {
+    will-change:auto;
+    transition:0.88s;
+ opacity:0;
+    overflow: scroll;
+    width: 100vw;
+    height:0;
+    border: 1px solid black;
+}
+
+.changeSite{
+    transition:0.66s;
+    padding:0.5em 1em;
+    position: absolute;
+    z-index:12;
+    margin-bottom:32px;
+    
+    float: right;
+    font-size:14px;
+    width:90%;
+    margin-bottom:1em;
+    border-radius:0.25em;
+    margin-left: 5%;
+    
+}
