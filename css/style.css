@@ -9,13 +9,28 @@
     font-style: normal;
 
 }
-body{ transition:0.66s;
+body{ 
+    padding: 8px 0 32px 0;
+    margin-bottom: 32px;
+    transition:0.66s;
     overflow-x:hidden;
     font-family: -apple-system, "San Francisco", "Helvetica Neue", Helvetica, “Lucida Grande”, Roboto, “Segoe UI”, Arial, Ubuntu, sans-serif;
 }
 h3{font-family: 'MyriadProLight'; font-family: -apple-system, "San Francisco", "Helvetica Neue", Helvetica, “Lucida Grande”, Roboto, “Segoe UI”, Arial, Ubuntu, sans-serif;}
-
-      
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #96ca3a;
+    margin: 1em 0;
+    padding: 0; 
+}
+b{color:#333031;
+    border-bottom:1px solid rgba(150,202,58,0.6);
+    margin-right:6px;
+    padding-bottom:1px;
+   
+}    
       
 ::-webkit-scrollbar {
     width: 8px
@@ -34,19 +49,21 @@ h3{font-family: 'MyriadProLight'; font-family: -apple-system, "San Francisco", "
 }
 
 ::selection {
-    background: rgba(191, 28, 44, .77)!important;
+    background: rgba(150, 202, 58, .55)!important;
     color: #fff!important;
-    text-shadow: 1px 1px 1px #000, 3px 3px 5px rgba(150, 202, 58, .55)
+    text-shadow: 1px 1px 1px #000, 3px 3px 5px rgba(0, 0, 0, .55)
 }
 
 ::-moz-selection {
-    background: rgba(191, 28, 44, .77)!important;
+    background: rgba(150, 202, 58, .55)!important;
     color: #fff!important;
-    text-shadow: 1px 1px 1px #000, 3px 3px 5px rgba(150, 202, 58, .55)
+    text-shadow: 1px 1px 1px #000, 3px 3px 5px rgba(0, 0, 0, .55)
 }
-
-.buttonSort{float: right;margin-right: 20px; border:2px solid rgba(6,4,3,0.1); border-radius:4px; padding:0.5em 1em; cursor:pointer; transition:0.2s; color:rgba(6,4,3,0.6);  font-family: 'MyriadProLight'; background:white;}
-.buttonSort:hover{pointer:cursor; border:2px solid rgba(6,4,3,0.3); color:rgba(6,4,3,0.8); }
+.buttonSort:focus{    outline: none!important; -webkit-box-shadow: inset 0px 0px 5px 0px rgba(150,202,58,1);
+-moz-box-shadow: inset 0px 0px 5px 0px rgba(150,202,58,1);
+box-shadow: inset 0px 0px 5px 0px rgba(150,202,58,1);}
+.buttonSort{float: right; border:2px solid rgba(150,202,58,0.6); border-radius:4px; padding:0.5em 1em; cursor:pointer; transition:0.2s; color:#333031;  font-family: 'MyriadProLight'; background:white; font-weight:bold;}
+.buttonSort:hover{pointer:cursor; border:2px solid #96ca3a; color:#101010; }
 #resultsList{font-family: 'MyriadProLight';   font-size:0.9em;font-family: -apple-system, "San Francisco", "Helvetica Neue", Helvetica, “Lucida Grande”, Roboto, “Segoe UI”, Arial, Ubuntu, sans-serif;}
  #demo{ font-family: 'MyriadProLight';}
 .leftDiv{padding-left: 16px;display:block;position:relative; width: 400px; max-width:100%!important;}
@@ -80,3 +97,5 @@ h3{font-family: 'MyriadProLight'; font-family: -apple-system, "San Francisco", "
     margin-left: 5%;
     
 }
+#resultsList li{color:#96ca3a!important; font-weight:bold;  line-height:1.6em;}
+#resultsList li span{color:#333031!important; font-weight:normal;}
