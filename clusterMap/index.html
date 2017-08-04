@@ -1,6 +1,5 @@
+<style>
 
-    <style>
-  	@media (max-width:580px){#map-container{margin-left:5%!important;width:90%!important; float:left!important;} #panel{width:80%!important; margin:0 auto; float:none!important; left:0px!important;}}
       body {
         margin: 0;
         padding: 0;
@@ -25,8 +24,9 @@
         
       }
       
-      
-      
+     
+     @media (max-width:980px){  #map-container{position:relative;top: 48px!important; right:10px;margin-left:5%!important;width:90%!important; float:left!important;} #panel{width:80%!important; margin:0 auto; float:none!important; left:0px!important;}}
+       @media (min-width:981px){  #map-container{position:relative;top: 25px!important; right:10px;}}
 ::-webkit-scrollbar {
     width: 8px
 }
@@ -215,7 +215,7 @@ function deleteAllCookies() {
     </script>
    
 
-    <div id="panel" class="col-xs-12 col-md-3" style="height: 550px;overflow-y: scroll;">
+    <div id="panel" class="col-xs-12 col-md-3" style="height: 550px;overflow-y: scroll;position:relative; bottom:32px;">
       
       <div style="display:none;">
         <input type="checkbox" checked="checked" id="usegmm"/>
@@ -238,7 +238,7 @@ function deleteAllCookies() {
       </div>
     </div>
   
-    <div id="map-container" class="col-xs-12 col-md-9" style="position: relative;top: 25px; right:10px; -moz-box-shadow: rgba(0, 0, 0, 0.17) 0px 5px 13px;-webkit-box-shadow: rgba(0, 0, 0, 0.17) 0px 5px 13px;box-shadow: rgba(0, 0, 0, 0.17) 0px 5px 13px;">
+    <div id="map-container" class="col-xs-12 col-md-9" style="position:  -moz-box-shadow: rgba(0, 0, 0, 0.17) 0px 5px 13px;-webkit-box-shadow: rgba(0, 0, 0, 0.17) 0px 5px 13px;box-shadow: rgba(0, 0, 0, 0.17) 0px 5px 13px;">
   
       <div  class="google-maps" id="map"></div>
     </div>
