@@ -24,7 +24,7 @@ var latlng = new google.maps.LatLng(44.115005, 20.072630);
     'center': latlng,
     'scrollwheel':  false,
     'mapTypeId': google.maps.MapTypeId.ROADMAP,
-    'styles':[{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#f06423"}]}]
+    'styles':[{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#96ca3a"}]}]
 
   };
 
