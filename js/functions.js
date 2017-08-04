@@ -11,8 +11,78 @@ setTimeout(function(){ setBgMap(); }, 1000);
 
 
 })();
+function iframeDidLoad() {
+  
+}
+function newSite() {
+    var sites = ['https://mile.cloud-industry.com/clusterMap/index.html']
+    
+    document.getElementById('myIframe').src = sites[Math.floor(Math.random() * sites.length)];
+     document.getElementById('myIframe').style.opacity='1';
+    document.getElementById('myIframe').style.height='650px';
+    
+      document.getElementById('changeSite').style.marginTop='-40px;';
+}
 
+function setMapCluster(){
+    
+    
+    
+        
+var mapJson= document.getElementById('results4').innerHTML;
+var obj = JSON.parse(mapJson);
+var helperZ= '[';
+for(i=0;i<obj.length;i++){
+    
+      (function IIFE(){
+            var j = i;
+            console.log(j);
+             var lngLat= obj[i].placeCoordinates; 
+               var pieces = lngLat.split(/[\s,]+/);
+            if(j < 1){
+              
+               helperZ+= '{"photo_id":'+ (522081+i)+',"photo_title2":"<p style=\'margin-bottom:6px; font-size:14px;width:98%;font-weight:700;  border-bottom:1px solid #333; color:#222;\'><strong>placeName: </strong>' + obj[i].placeName + '</p><p style=\'font-size:12px;\'><strong>placeId: </strong>' + obj[i].placeId+'</p><p style=\'font-size:12px;\'><strong>placeAdress: </strong>' +obj[i].placeAdress + '</p><p style=\'font-size:12px;\'><strong>placeCoordinates: </strong>' + obj[i].placeCoordinates + '</p><p style=\'font-size:12px;\'><strong>placeDistanceFromUserLocation: </strong>' + obj[i].placeDistanceFromUserLocation + 'm</p>", "photo_title": "<h3 style=\'font-weight:700;border-bottom: 1px solid #E7E7E7; color:#f06423; text-align: leftr;\'>List of 10 closest Telenor Bank ATMs</h3><div class=\'hoverMap\'><p style=\'margin-bottom:6px; font-size:14px;width:98%;font-weight:700;  border-bottom:1px solid #333; color:#f06423;\'><strong>placeName: </strong>' + obj[i].placeName + '</p><p style=\'font-size:12px;\'><strong>placeId: </strong>' + obj[i].placeId+'</p><p style=\'font-size:12px;\'><strong>placeAdress: </strong>' +obj[i].placeAdress + '</p><p style=\'font-size:12px;\'><strong>placeCoordinates: </strong>' + obj[i].placeCoordinates + '</p><p style=\'font-size:12px;\'><strong>placeDistanceFromUserLocation: </strong>' + obj[i].placeDistanceFromUserLocation + 'm</p></div>", "photo_url": "https://www.telenor.rs/static/images/1/38/438/438_d.png", "photo_file_url": "https://www.telenor.rs/static/images/1/38/438/438_d.png", "longitude":' + pieces[1] +', "latitude":'+pieces[0] + ', "width": 500, "height": 350, "upload_date": "21 January 2007", "owner_id": 109117, "owner_name": "TelenorBanka", "owner_url": "http://www.telenorbanka.rs"},';
+     
+            }
+            else{
+               helperZ+= '{"photo_id":'+ (522081+i)+',"photo_title2":"<p style=\'margin-bottom:6px; font-size:14px;width:98%;font-weight:700;  border-bottom:1px solid #333; color:#222;\'><strong>placeName: </strong>' + obj[i].placeName + '</p><p style=\'font-size:12px;\'><strong>placeId: </strong>' + obj[i].placeId+'</p><p style=\'font-size:12px;\'><strong>placeAdress: </strong>' +obj[i].placeAdress + '</p><p style=\'font-size:12px;\'><strong>placeCoordinates: </strong>' + obj[i].placeCoordinates + '</p><p style=\'font-size:12px;\'><strong>placeDistanceFromUserLocation: </strong>' + obj[i].placeDistanceFromUserLocation + 'm</p>", "photo_title": "<div class=\'hoverMap\'><p style=\'margin-bottom:6px; font-size:14px;width:98%;font-weight:700;  border-bottom:1px solid #333; color:#f06423;\'><strong>placeName: </strong>' + obj[i].placeName + '</p><p style=\'font-size:12px;\'><strong>placeId: </strong>' + obj[i].placeId+'</p><p style=\'font-size:12px;\'><strong>placeAdress: </strong>' +obj[i].placeAdress + '</p><p style=\'font-size:12px;\'><strong>placeCoordinates: </strong>' + obj[i].placeCoordinates + '</p><p style=\'font-size:12px;\'><strong>placeDistanceFromUserLocation: </strong>' + obj[i].placeDistanceFromUserLocation + 'm</p></div>", "photo_url": "https://www.telenor.rs/static/images/1/38/438/438_d.png", "photo_file_url": "https://www.telenor.rs/static/images/1/38/438/438_d.png", "longitude":' + pieces[1] +', "latitude":'+pieces[0] + ', "width": 500, "height": 350, "upload_date": "21 January 2007", "owner_id": 109117, "owner_name": "TelenorBanka", "owner_url": "http://www.telenorbanka.rs"},';
+      
+            }
+        })();
+   
 
+    
+    
+
+   
+   
+
+}
+helperZ = 'var data = { "count": 107,"photos": ' + helperZ.slice(0, -1) +']}';
+   var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(ev){
+            
+         
+
+             if (xhr.readyState == 4 && xhr.status == 200) {
+             var krmpoticz = xhr.responseText;
+             console.log(JSON.parse(krmpoticz));
+             newSite();
+          
+           
+        }
+            
+        };
+ 
+        xhr.open('POST', 'ajax.php', true);
+        xhr.setRequestHeader("Content-type","application/json");
+        
+        xhr.send(helperZ);
+ 
+    
+    
+    
+}
 
 var button_element1 = document.getElementById('sortingAsc');
  var button_element2 = document.getElementById('sortingDsc');
@@ -91,7 +161,7 @@ function setBgMap() {
 function sortingDsc(){
     var miler = JSON.parse(document.getElementById('help1').innerHTML);
      
-    miler.sort( predicateBy("placeDistanceFromUserLocation") );
+    miler.sort( predicateBy2("placeDistanceFromUserLocation") );
     
      
         miler.sort( predicateBy2("placeDistanceFromUserLocation") ); 
