@@ -151,7 +151,7 @@ function callback(results, status) {
         "placeId"       : results[i].id,
         "placeAdress"       : results[i].vicinity,
         "placeDistanceFromUserLocation"       : distance
-    });
+    }); 
        
              employees2.push({ 
         "placeName" : results[i].name,
