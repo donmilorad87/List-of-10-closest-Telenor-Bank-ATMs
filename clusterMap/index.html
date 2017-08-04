@@ -1,18 +1,18 @@
 
-
     <style>
-  	@media (max-width:580px){#map-container{display:none;} #panel{width:80%!important; margin:0 auto; float:none!important; left:0px!important;}}
+  	@media (max-width:580px){#map-container{margin-left:5%!important;width:90%!important; float:left!important;} #panel{width:80%!important; margin:0 auto; float:none!important; left:0px!important;}}
       body {
         margin: 0;
         padding: 0;
+        padding-top:40px!important;
                 font-family: "Roboto condensed",Verdana,Arial;
         font-size: 14px;
-        overflow: hidden!important;
+        overflow-y: scroll!important;
       }
       .title>h3{padding-bottom:16px;}
        .hoverMap{margin-bottom:24px;}
       h3{margin-top:4px!important;margin-bottom:4px!important;}
-      .hoverMap:hover{background: rgba(224,100,35,0.22);}
+      .hoverMap:hover{background: rgba(150, 202, 58, .22);}
       #panel {
         float: left;
         width: 250px;
@@ -24,6 +24,40 @@
         left:8px;
         
       }
+      
+      
+      
+::-webkit-scrollbar {
+    width: 8px
+}
+
+::-webkit-scrollbar-track {
+    background: #F4F4F4
+}
+
+::-webkit-scrollbar-thumb {
+    background: #96ca3a;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: #96ca3a;
+}
+
+::selection {
+    background: rgba(191, 28, 44, .77)!important;
+    color: #fff!important;
+    text-shadow: 1px 1px 1px #000, 3px 3px 5px rgba(150, 202, 58, .55)
+}
+
+::-moz-selection {
+    background: rgba(191, 28, 44, .77)!important;
+    color: #fff!important;
+    text-shadow: 1px 1px 1px #000, 3px 3px 5px rgba(150, 202, 58, .55)
+}
+
+      
+      
+      
       .overlay {
 background:transparent;
 position:relative;
@@ -188,9 +222,9 @@ function deleteAllCookies() {
         <span>Use MarkerClusterer</span>
       </div>
 
-      <div >
+      <div  style="display:none;">
         Markers:
-        <select id="nummarkers">
+        <select id="nummarkers" style="display:none;">
           <option id="numverOfMarkers" value="4" selected="selected">4</option>
    
         </select>
