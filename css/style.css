@@ -14,6 +14,37 @@ body{ transition:0.66s;
     font-family: -apple-system, "San Francisco", "Helvetica Neue", Helvetica, “Lucida Grande”, Roboto, “Segoe UI”, Arial, Ubuntu, sans-serif;
 }
 h3{font-family: 'MyriadProLight'; font-family: -apple-system, "San Francisco", "Helvetica Neue", Helvetica, “Lucida Grande”, Roboto, “Segoe UI”, Arial, Ubuntu, sans-serif;}
+
+      
+      
+::-webkit-scrollbar {
+    width: 8px
+}
+
+::-webkit-scrollbar-track {
+    background: #F4F4F4
+}
+
+::-webkit-scrollbar-thumb {
+    background: #96ca3a;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: #96ca3a;
+}
+
+::selection {
+    background: rgba(191, 28, 44, .77)!important;
+    color: #fff!important;
+    text-shadow: 1px 1px 1px #000, 3px 3px 5px rgba(150, 202, 58, .55)
+}
+
+::-moz-selection {
+    background: rgba(191, 28, 44, .77)!important;
+    color: #fff!important;
+    text-shadow: 1px 1px 1px #000, 3px 3px 5px rgba(150, 202, 58, .55)
+}
+
 .buttonSort{float: right;margin-right: 20px; border:2px solid rgba(6,4,3,0.1); border-radius:4px; padding:0.5em 1em; cursor:pointer; transition:0.2s; color:rgba(6,4,3,0.6);  font-family: 'MyriadProLight'; background:white;}
 .buttonSort:hover{pointer:cursor; border:2px solid rgba(6,4,3,0.3); color:rgba(6,4,3,0.8); }
 #resultsList{font-family: 'MyriadProLight';   font-size:0.9em;font-family: -apple-system, "San Francisco", "Helvetica Neue", Helvetica, “Lucida Grande”, Roboto, “Segoe UI”, Arial, Ubuntu, sans-serif;}
@@ -23,7 +54,9 @@ h3{font-family: 'MyriadProLight'; font-family: -apple-system, "San Francisco", "
 .rightHelpZ{width:100%; position:relative; z-index:11;}
 #resultsList li{font-family: 'MyriadProLight';}
 #myIframe {
+    border:0!important;
     will-change:auto;
+     transition-delay:2s;
     transition:0.88s;
  opacity:0;
     overflow: scroll;
