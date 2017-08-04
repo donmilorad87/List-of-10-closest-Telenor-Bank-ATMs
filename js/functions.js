@@ -1,70 +1,17 @@
 (function() {
 
-    var x = document.getElementById("demo");
+
+   
     var container = document.getElementById('results');
     var list = document.getElementById('resultsList');
-    getLocation();
+   
  
 setTimeout(function(){ setBgMap(); }, 1000);
-setTimeout(function(){   document.getElementById('bodyZ').style.opacity = "1"; }, 1300);
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-function showPosition(position) {
-    x.innerHTML = 'User HTML5 curent: ' + position.coords.latitude + ", " + position.coords.longitude;
-    
-    var zukorlazovic =document.getElementById("demo").innerHTML;
-    var xzt= position.coords.latitude; var xztt = position.coords.longitude;
-var request = {
-    location: new google.maps.LatLng(xzt,xztt),
-    type:'atm',
-    radius: '10000000',
-	keyword:'telenor'
-};
 
 
-var service = new google.maps.places.PlacesService(container);
-service.nearbySearch(request, callback);
-function callback(results, status) {
-    
-    
-    
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-    var employees = [];
-        for (var i = 0; i < 10; i++) {
-         
-  
-   
-    
-        var a = new google.maps.LatLng(request.location.lat(),request.location.lng());
-        var b = new google.maps.LatLng(results[i].geometry.location.lat(),results[i].geometry.location.lng());
-        var distance = google.maps.geometry.spherical.computeDistanceBetween(a,b);
-          
-            
-             employees.push({ 
-        "placeName" : results[i].name,
-        "placeCoordinates"  : results[i].geometry.location.lat()+', '+results[i].geometry.location.lng(),
-        "placeId"       : results[i].id,
-        "placeAdress"       : results[i].vicinity,
-        "placeDistanceFromUserLocation"       : distance
-    });
-    
-            container.innerHTML += '&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|' + results[i].geometry.location.lat()+', '+results[i].geometry.location.lng();
-             list.innerHTML += '<li style="font-family: "MyriadProLight";"> <b> place_name:</b> '+ results[i].name + '</br> <b>place_coordinates:</b>  ' + results[i].geometry.location.lat()+', '+results[i].geometry.location.lng() + " <br> <b>Place_id: </b> " + results[i].id   + '<br> <b>Place_adress: </b>' + results[i].vicinity + '<br> <b>Distance from user location: </b>' +distance+' m' + '<hr> <b>Static map: </b> <img src="https://maps.google.com/maps/api/staticmap?center=' + results[i].geometry.location.lat()+', '+results[i].geometry.location.lng() + '&maptype=roadmap&zoom=14&size=200x200&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|'+ results[i].geometry.location.lat()+', '+results[i].geometry.location.lng()  +'&key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U'  + '"></li><hr>';
-            
-            }
-            document.getElementById('help1').innerHTML=JSON.stringify(employees);
-           
-		
-    }
-}
-}
+
 })();
- 
+
 
 var button_element1 = document.getElementById('sortingAsc');
  var button_element2 = document.getElementById('sortingDsc');
