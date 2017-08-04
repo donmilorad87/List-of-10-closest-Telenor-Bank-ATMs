@@ -268,7 +268,7 @@ window.onload = function(){
   
   
   
-    <script type="text/javascript" src="js/functions26.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
  <script>
            
   
