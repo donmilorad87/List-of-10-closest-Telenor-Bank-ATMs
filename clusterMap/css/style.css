@@ -1,0 +1,145 @@
+
+      body {
+         
+        margin: 0;
+        padding: 0;
+        padding-top:40px!important;
+                font-family: "Roboto condensed",Verdana,Arial;
+        font-size: 14px;
+        
+      }
+      .title>h3{padding-bottom:16px;}
+       .hoverMap{margin-bottom:24px;}
+      h3{margin-top:4px!important;margin-bottom:4px!important;}
+      .hoverMap:hover{background: rgba(150, 202, 58, .22);}
+      #panel {
+        float: left;
+        width: 266px;
+        
+        -moz-box-shadow: rgba(0, 0, 0, 0.17) 0px 5px 13px;-webkit-box-shadow: rgba(0, 0, 0, 0.17) 0px 5px 13px;box-shadow: rgba(0, 0, 0, 0.17) 0px 5px 13px;
+        position:relative;
+        top:0px;
+        padding:8px;
+        left:10px;
+        
+      }
+      
+     
+     @media (max-width:980px){ body{overflow-y: scroll!important;} #map-container{position:relative;top: 48px!important; right:10px;margin-left:5%!important;width:90%!important; float:left!important;} #panel{width:80%!important; margin:0 auto; float:none!important; left:0px!important;}}
+       @media (min-width:981px){ body{overflow-y: hidden!important;} #map-container{    position: relative; top: 0px!important; right: -10px;} #panel {   left:10px;}}
+::-webkit-scrollbar {
+    width: 8px
+}
+
+::-webkit-scrollbar-track {
+    background: #F4F4F4
+}
+
+::-webkit-scrollbar-thumb {
+    background: #96ca3a;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: #96ca3a;
+}
+
+::selection {
+    background: rgba(150, 202, 58, .55)!important;
+    color: #fff!important;
+    text-shadow: 1px 1px 1px #000, 3px 3px 5px rgba(0, 0, 0, .55)
+}
+
+::-moz-selection {
+    background: rgba(150, 202, 58, .55)!important;
+    color: #fff!important;
+    text-shadow: 1px 1px 1px #000, 3px 3px 5px rgba(0, 0, 0, .55)
+}
+      
+      .overlay {
+background:transparent;
+position:relative;
+width:100%; 
+height: 600px; 
+top: 600px;
+margin-top:- 600px;
+}
+      #map-container {
+        margin-left: 300px;
+        width: calc(100% - 350px);
+      }
+      #map {
+     
+     width:100%;
+       max-height:600px;
+        height: 600px;
+      }
+      #markerlist {
+      
+        margin: 0px;
+        overflow: hidden!important;
+	
+      }
+      .map {
+	
+	height:650px;	
+}
+
+
+.map-wrap {
+	position:relative; 
+}
+	
+.overlay {
+	width:100%;
+	min-height:500px; 
+	position:absolute; 
+	top:0;
+}
+      .title {
+       
+        overflow: hidden;
+        width: 256px;
+        cursor: pointer;
+        padding: 2px 0;
+        display: block;
+        color: #000;
+        text-decoration: none;
+      }
+      .title:visited {
+        color: #000;
+      }
+      .title:hover {
+        
+      }
+      #timetaken {
+        color: #f00;
+      }
+      .info {
+        width: 200px;
+      
+      }
+      .info img {
+        border: 0;
+      }
+      .info-body {
+
+        width: auto;
+     max-width:200px;
+        margin: 2px 0;
+        text-align: center;
+        overflow: hidden;
+      }
+      .info-img {
+        height: 220px;
+        width: 200px;
+      }
+      .gm-style div div div div div div div div {
+            background: transparent !important;
+            padding: 0;
+            margin: 0;
+            padding: 0;
+            top: 0;
+            color: #333;
+            box-shadow: none!important;
+        }
+        
