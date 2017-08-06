@@ -128,15 +128,15 @@ var request2 = {
 };
 var container = document.getElementById('results');
 var list = document.getElementById('resultsList');
-var service = new google.maps.places.PlacesService(container);
-service.nearbySearch(request2, callback2);
+var service2 = new google.maps.places.PlacesService(container);
+service2.nearbySearch(request2, callback2);
 function callback2(results2, status) {
     
     
     
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-    var employees1 = [];
-       var employees2 = [];
+    var employees12 = [];
+       var employees22 = [];
      
       document.getElementById('setMapCluster').innerHTML=JSON.stringify(results2);
         for (var i = 0; i < results2.length; i++) {
@@ -148,26 +148,26 @@ function callback2(results2, status) {
                 
                     var a = new google.maps.LatLng(request2.location.lat(),request2.location.lng());
         var b = new google.maps.LatLng(results2[i].geometry.location.lat(),results2[i].geometry.location.lng());
-        var distance2 = google.maps.geometry.spherical.computeDistanceBetween(a,b);
+        var distance = google.maps.geometry.spherical.computeDistanceBetween(a,b);
           
             
-             employees1.push({ 
+             employees12.push({ 
         "placeName" : results2[i].name,
         "placeCoordinates"  : results2[i].geometry.location.lat()+', '+results2[i].geometry.location.lng(),
         "placeId"       : results2[i].id,
         "placeAdress"       : results2[i].vicinity,
-        "placedistance2FromUserLocation"       : distance2
+        "placeDistanceFromUserLocation"       : distance
     });
        
-             employees2.push({ 
+             employees22.push({ 
         "placeName" : results2[i].name,
         "placeCoordinates"  : results2[i].geometry.location.lat()+', '+results2[i].geometry.location.lng(),
         "placeId"       : results2[i].id,
         "placeAdress"       : results2[i].vicinity,
-        "placedistance2FromUserLocation"       : distance2
+        "placeDistanceFromUserLocation"       : distance
     });
             container.innerHTML += '&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|' + results2[i].geometry.location.lat()+', '+results2[i].geometry.location.lng();
-             list.innerHTML += '<li> <b> place_name:</b><span>  '+ results2[i].name + '</span> </br> <b>place_coordinates:</b> <span>  ' + results2[i].geometry.location.lat()+', '+results2[i].geometry.location.lng() + " </span> <br> <b>Place_id: </b> <span> " + results2[i].id   + '</span> <br> <b>Place_adress: </b><span> ' + results2[i].vicinity + '</span> <br> <b>distance2 from user location: </b><span> ' +distance2+' m</span> ' + '<hr> <b>Static map: </b> <img src="https://maps.google.com/maps/api/staticmap?center=' + results2[i].geometry.location.lat()+', '+results2[i].geometry.location.lng() + '&maptype=roadmap&zoom=16&size=200x200&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|'+ results2[i].geometry.location.lat()+', '+results2[i].geometry.location.lng()  +'&style=feature:road.local%7Celement:geometry.fill%7Ccolor:0x96ca3a&style=feature:road.arterial%7Celement:geometry.fill%7Ccolor:0x96ca3a&key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U'  + '"></li><hr>';
+             list.innerHTML += '<li> <b> place_name:</b><span>  '+ results2[i].name + '</span> </br> <b>place_coordinates:</b> <span>  ' + results2[i].geometry.location.lat()+', '+results2[i].geometry.location.lng() + " </span> <br> <b>Place_id: </b> <span> " + results2[i].id   + '</span> <br> <b>Place_adress: </b><span> ' + results2[i].vicinity + '</span> <br> <b>distance from user location: </b><span> ' +distance+' m</span> ' + '<hr> <b>Static map: </b> <img src="https://maps.google.com/maps/api/staticmap?center=' + results2[i].geometry.location.lat()+', '+results2[i].geometry.location.lng() + '&maptype=roadmap&zoom=16&size=200x200&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|'+ results2[i].geometry.location.lat()+', '+results2[i].geometry.location.lng()  +'&style=feature:road.local%7Celement:geometry.fill%7Ccolor:0x96ca3a&style=feature:road.arterial%7Celement:geometry.fill%7Ccolor:0x96ca3a&key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U'  + '"></li><hr>';
             
             
         
@@ -178,15 +178,15 @@ function callback2(results2, status) {
                 
                 var a = new google.maps.LatLng(request2.location.lat(),request2.location.lng());
         var b = new google.maps.LatLng(results2[i].geometry.location.lat(),results2[i].geometry.location.lng());
-        var distance2 = google.maps.geometry.spherical.computeDistanceBetween(a,b);
+        var distance = google.maps.geometry.spherical.computeDistanceBetween(a,b);
           
             
-             employees2.push({ 
+             employees22.push({ 
         "placeName" : results2[i].name,
         "placeCoordinates"  : results2[i].geometry.location.lat()+', '+results2[i].geometry.location.lng(),
         "placeId"       : results2[i].id,
         "placeAdress"       : results2[i].vicinity,
-        "placedistance2FromUserLocation"       : distance2
+        "placeDistanceFromUserLocation"       : distance
     });
                 
             }
@@ -195,9 +195,9 @@ function callback2(results2, status) {
     
         
             }
-             document.getElementById('help2').innerHTML=employees2.length;
-            document.getElementById('help1').innerHTML=JSON.stringify(employees1);
-           document.getElementById('setMapCluster').innerHTML=JSON.stringify(employees2);
+             document.getElementById('help2').innerHTML=employees22.length;
+            document.getElementById('help1').innerHTML=JSON.stringify(employees12);
+           document.getElementById('setMapCluster').innerHTML=JSON.stringify(employees22);
         
 		checkCookie();
     }
@@ -227,15 +227,15 @@ var request3 = {
 };
 var container = document.getElementById('results');
 var list = document.getElementById('resultsList');
-var service = new google.maps.places.PlacesService(container);
-service.nearbySearch(request3, callback3);
+var service3 = new google.maps.places.PlacesService(container);
+service3.nearbySearch(request3, callback3);
 function callback3(results3, status) {
     
     
     
    if (status == google.maps.places.PlacesServiceStatus.OK) {
-    var employees1 = [];
-       var employees2 = [];
+    var employees13 = [];
+       var employees23 = [];
      
       document.getElementById('setMapCluster').innerHTML=JSON.stringify(results3);
         for (var i = 0; i < results3.length; i++) {
@@ -247,26 +247,26 @@ function callback3(results3, status) {
                 
                     var a = new google.maps.LatLng(request3.location.lat(),request3.location.lng());
         var b = new google.maps.LatLng(results3[i].geometry.location.lat(),results3[i].geometry.location.lng());
-        var distance3 = google.maps.geometry.spherical.computeDistanceBetween(a,b)
+        var distance = google.maps.geometry.spherical.computeDistanceBetween(a,b)
           
             
-             employees1.push({ 
+             employees13.push({ 
         "placeName" : results3[i].name,
         "placeCoordinates"  : results3[i].geometry.location.lat()+', '+results3[i].geometry.location.lng(),
         "placeId"       : results3[i].id,
         "placeAdress"       : results3[i].vicinity,
-        "placedistance3FromUserLocation"       : distance3
+        "placeDistanceFromUserLocation"       : distance
     });
        
-             employees2.push({ 
+             employees23.push({ 
         "placeName" : results3[i].name,
         "placeCoordinates"  : results3[i].geometry.location.lat()+', '+results3[i].geometry.location.lng(),
         "placeId"       : results3[i].id,
         "placeAdress"       : results3[i].vicinity,
-        "placedistance3FromUserLocation"       : distance3
+        "placeDistanceFromUserLocation"       : distance
     });
             container.innerHTML += '&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|' + results3[i].geometry.location.lat()+', '+results3[i].geometry.location.lng();
-             list.innerHTML += '<li> <b> place_name:</b><span>  '+ results3[i].name + '</span> </br> <b>place_coordinates:</b> <span>  ' + results3[i].geometry.location.lat()+', '+results3[i].geometry.location.lng() + " </span> <br> <b>Place_id: </b> <span> " + results3[i].id   + '</span> <br> <b>Place_adress: </b><span> ' + results3[i].vicinity + '</span> <br> <b>distance3 from user location: </b><span> ' +distance3+' m</span> ' + '<hr> <b>Static map: </b> <img src="https://maps.google.com/maps/api/staticmap?center=' + results3[i].geometry.location.lat()+', '+results3[i].geometry.location.lng() + '&maptype=roadmap&zoom=16&size=200x200&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|'+ results3[i].geometry.location.lat()+', '+results3[i].geometry.location.lng()  +'&style=feature:road.local%7Celement:geometry.fill%7Ccolor:0x96ca3a&style=feature:road.arterial%7Celement:geometry.fill%7Ccolor:0x96ca3a&key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U'  + '"></li><hr>';
+             list.innerHTML += '<li> <b> place_name:</b><span>  '+ results3[i].name + '</span> </br> <b>place_coordinates:</b> <span>  ' + results3[i].geometry.location.lat()+', '+results3[i].geometry.location.lng() + " </span> <br> <b>Place_id: </b> <span> " + results3[i].id   + '</span> <br> <b>Place_adress: </b><span> ' + results3[i].vicinity + '</span> <br> <b>distance from user location: </b><span> ' +distance+' m</span> ' + '<hr> <b>Static map: </b> <img src="https://maps.google.com/maps/api/staticmap?center=' + results3[i].geometry.location.lat()+', '+results3[i].geometry.location.lng() + '&maptype=roadmap&zoom=16&size=200x200&markers=icon:http://mile.cloud-industry.com/zz_KS0_icon.ico|'+ results3[i].geometry.location.lat()+', '+results3[i].geometry.location.lng()  +'&style=feature:road.local%7Celement:geometry.fill%7Ccolor:0x96ca3a&style=feature:road.arterial%7Celement:geometry.fill%7Ccolor:0x96ca3a&key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U'  + '"></li><hr>';
             
             
         
@@ -277,15 +277,15 @@ function callback3(results3, status) {
                 
                 var a = new google.maps.LatLng(request3.location.lat(),request3.location.lng());
         var b = new google.maps.LatLng(results3[i].geometry.location.lat(),results3[i].geometry.location.lng());
-        var distance3 = google.maps.geometry.spherical.computeDistanceBetween(a,b);
+        var distance = google.maps.geometry.spherical.computeDistanceBetween(a,b);
           
             
-             employees2.push({ 
+             employees23.push({ 
         "placeName" : results3[i].name,
         "placeCoordinates"  : results3[i].geometry.location.lat()+', '+results3[i].geometry.location.lng(),
         "placeId"       : results3[i].id,
         "placeAdress"       : results3[i].vicinity,
-        "placedistance3FromUserLocation"       : distance3
+        "placeDistanceFromUserLocation"       : distance
     });
                 
             }
@@ -294,9 +294,9 @@ function callback3(results3, status) {
     
         
             }
-             document.getElementById('help2').innerHTML=employees2.length;
-            document.getElementById('help1').innerHTML=JSON.stringify(employees1);
-           document.getElementById('setMapCluster').innerHTML=JSON.stringify(employees2);
+             document.getElementById('help2').innerHTML=employees23.length;
+            document.getElementById('help1').innerHTML=JSON.stringify(employees13);
+           document.getElementById('setMapCluster').innerHTML=JSON.stringify(employees23);
         
 		checkCookie();
     }
