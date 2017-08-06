@@ -59,7 +59,6 @@ speedTest.showMarkers = function() {
   var panel = $('markerlist');
   panel.innerHTML = '';
   var numMarkers = getCookie("clusterMapingZ");
-console.log(numMarkers);
   for (var i = 0; i < numMarkers; i++) {
     var titleText = speedTest.pics[i].photo_title;
     if (titleText === '') {
@@ -99,10 +98,8 @@ console.log(numMarkers);
 speedTest.map.addListener('mouseout', function() {
     speedTest.map.set('scrollwheel', false);
 });
-  }deleteAllCookies() ; 
-  
-
-
+  }
+ 
   window.setTimeout(speedTest.time, 0);
  
 };
@@ -162,3 +159,35 @@ speedTest.time = function() {
   $('timetaken').innerHTML = end - start;
 
 };
+
+     function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user=getCookie("clusterMapingZ");
+       user = document.getElementById('help2').innerHTML;
+       if (user != "" && user != null) {
+           setCookie("clusterMapingZ", user, 30);
+       }
+}
+
