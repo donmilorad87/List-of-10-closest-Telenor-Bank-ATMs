@@ -744,7 +744,7 @@ MarkerClusterer.prototype.distanceBetweenPoints_ = function(p1, p2) {
  * @private
  */
 MarkerClusterer.prototype.addToClosestCluster_ = function(marker) {
-  var distance = 40; // Some large number 
+  var distance = 5; // Some large number 
   var clusterToAddTo = null;
   var pos = marker.getPosition();
   for (var i = 0, cluster; cluster = this.clusters_[i]; i++) {
@@ -1255,7 +1255,7 @@ ClusterIcon.prototype.createCss = function(pos) {
   }
 
   var txtColor = this.textColor_ ? this.textColor_ : 'white';
-  var txtSize = this.textSize_ ? this.textSize_ : 18;
+  var txtSize = this.textSize_ ? this.textSize_ : 12;
 
   style.push('cursor:pointer; top:' + pos.y + 'px; left:' +
       pos.x + 'px; color:' + txtColor + '; position:absolute; font-size:' +
