@@ -9,7 +9,33 @@
     font-style: normal;
 
 }
+  #loading {
+		-webkit-animation: rotation 2s infinite linear;
+}
+
+#loading2 {
+		-webkit-animation: rotation2 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(360deg);
+		}
+}
+@-webkit-keyframes rotation2 {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(-360deg);
+		}
+} 
 body{ 
+     background-color: rgba(6,4,3,0.1);
+     
     padding: 8px 0 32px 0;
     margin-bottom: 32px;
     transition:0.66s;
@@ -63,10 +89,13 @@ b{color:#333031;
 -moz-box-shadow: inset 0px 0px 5px 0px rgba(150,202,58,1);
 box-shadow: inset 0px 0px 5px 0px rgba(150,202,58,1);}
 .buttonSort{float: right; border:2px solid rgba(150,202,58,0.6); border-radius:4px; padding:0.5em 1em; cursor:pointer; transition:0.2s; color:#333031;  font-family: 'MyriadProLight'; background:white; font-weight:bold;}
-.buttonSort:hover{pointer:cursor; border:2px solid #96ca3a; color:#101010; }
+.changeSite:hover ,.buttonSort:hover{pointer:cursor; border:2px solid #96ca3a; color:#101010; }
 #resultsList{font-family: 'MyriadProLight';   font-size:0.9em;font-family: -apple-system, "San Francisco", "Helvetica Neue", Helvetica, “Lucida Grande”, Roboto, “Segoe UI”, Arial, Ubuntu, sans-serif;}
  #demo{ font-family: 'MyriadProLight';}
-.leftDiv{padding-left: 16px;display:block;position:relative; width: 400px; max-width:100%!important;}
+.leftDiv{    float: left;padding-left: 16px;display:block;position:relative; max-width:328px; background: white;
+    padding: 16px;
+    border: 2px solid #96ca3a;
+    border-radius: 4px;}
 .rightDiv{float:right; height:100%;position:relative; margin-bottom:32px;}
 .rightHelpZ{width:100%; position:relative; z-index:11;}
 #resultsList li{font-family: 'MyriadProLight';}
@@ -83,19 +112,36 @@ box-shadow: inset 0px 0px 5px 0px rgba(150,202,58,1);}
 }
 
 .changeSite{
-    transition:0.66s;
-    padding:0.5em 1em;
-    position: absolute;
-    z-index:12;
-    margin-bottom:32px;
-    
-    float: right;
-    font-size:14px;
-    width:90%;
-    margin-bottom:1em;
-    border-radius:0.25em;
-    margin-left: 5%;
+     border:2px solid rgba(150,202,58,0.6); cursor:pointer; color:#333031;  font-family: 'MyriadProLight'; background:white; font-weight:bold;
+        float: right;
+
+      transition: 0.66s;
+    padding: 0.5em 1em;
+    z-index: 12;
+    font-size: 14px;
+    width: 96%;
+    margin:26px 2% 10px 2%!important;
+    border-radius: 0.25em;
     
 }
+.changeSite2:hover {pointer:cursor; border:2px solid rgba(6,4,3,0.6); color:#101010; }
+.changeSite2{
+     border:2px solid rgba(6,4,3,0.1); cursor:pointer; color:#333031;  font-family: 'MyriadProLight'; background:white; font-weight:bold;
+        float: right;
+
+      transition: 0.66s;
+    padding: 0.5em 1em;
+    z-index: 12;
+    font-size: 14px;
+    width: 96%;
+    margin:26px 2% 10px 2%!important;
+    border-radius: 0.25em;
+    
+}
+
+
 #resultsList li{color:#96ca3a!important; font-weight:bold;  line-height:1.6em;}
 #resultsList li span{color:#333031!important; font-weight:normal;}
+#backgroundDiv{will-change:auto; width:100vw; height:100vh;  position:absolute; z-index:10; opacity:1; transition:0.33s;}
+#loadingDiv{will-change:auto; display: block; width: 100px; height: 100px;position:absolute; z-index:11; transition: 0.33s 0.33s;top: calc(50vh - 100px) ;left: calc(50vw - 50px); opacity: 1; }
+.buttonSort{float: right; font-size:14px; width:100%;margin-bottom:1em; border-radius:0.25em;}
