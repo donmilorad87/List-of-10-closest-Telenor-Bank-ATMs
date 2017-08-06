@@ -1,6 +1,7 @@
 (function() {
 
 
+ 
    
     var container = document.getElementById('results');
     var list = document.getElementById('resultsList');
@@ -8,9 +9,17 @@
  
 setTimeout(function(){ setBgMap(); }, 1000);
 
-
+setTimeout(function(){ document.getElementById('backgroundDiv').style.opacity='0';
+document.getElementById('loadingDiv').style.opacity='0';
+document.getElementById('mainDiv').style.opacity='1'; 
+    document.getElementById('generateClusteringMpainz').style.opacity='1'; 
+     document.getElementById('bodyZ').style.overflowY='scroll'; 
+}, 2200);
 
 })();
+
+
+
 function iframeDidLoad() {
   
 }
@@ -21,7 +30,8 @@ function newSite() {
      document.getElementById('myIframe').style.opacity='1';
     document.getElementById('myIframe').style.height='680px';
     
-      document.getElementById('changeSite').style.opacity='0';
+     
+      
 }
 
 function setMapCluster(){
@@ -29,7 +39,7 @@ function setMapCluster(){
     
     
         
-var mapJson= document.getElementById('results4').innerHTML;
+var mapJson= document.getElementById('setMapCluster').innerHTML;
 var obj = JSON.parse(mapJson);
 var helperZ= '[';
 for(i=0;i<obj.length;i++){
@@ -130,7 +140,7 @@ var zumbulkovic = document.getElementById('results').innerHTML;
     ll = [location.coords.latitude, location.coords.longitude].join(',');
 
     document.getElementById('demo').innerHTML ='User current cordinates: <br> Latitude: ' + location.coords.latitude + '<br> Longitude: ' + location.coords.longitude +'<br> Aaccuracy ≈ ' + accuracy +' m' ;
-	url = "https://maps.google.com/maps/api/staticmap?center=" + ll + "&maptype=roadmap&zoom=8&size=320x600&markers=" + ll + '' + res +"&style=feature:road.highway%7Celement:geometry.fill%7Ccolor:0x96ca3a&style=feature:road.arterial%7Celement:geometry.fill%7Ccolor:0x96ca3a&&style=feature:road.local%7Celement:geometry.fill%7Ccolor:0x96ca3a&key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U";
+	url = "https://maps.google.com/maps/api/staticmap?center=" + ll + "&maptype=roadmap&zoom=8&size=300x600&markers=" + ll + '' + res +"&style=feature:road.highway%7Celement:geometry.fill%7Ccolor:0x96ca3a&style=feature:road.arterial%7Celement:geometry.fill%7Ccolor:0x96ca3a&&style=feature:road.local%7Celement:geometry.fill%7Ccolor:0x96ca3a&key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U";
     document.getElementById('sirakuza').setAttribute("src", url);
 }   
 function setBgMap() {
@@ -198,4 +208,37 @@ function predicateBy2(prop){
       }
       return 0;
    }
+}
+
+
+
+ function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user=getCookie("clusterMapingZ");
+       user = document.getElementById('help2').innerHTML;
+       if (user != "" && user != null) {
+           setCookie("clusterMapingZ", user, 30);
+       }
 }
