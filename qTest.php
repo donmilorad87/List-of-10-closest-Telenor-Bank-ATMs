@@ -154,8 +154,8 @@ document.getElementById("search2").addEventListener("click", function(){
   <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&amp;key=AIzaSyBTmcSBUDmoAwiaFFIbsslB4IGJRruz--U" type="text/javascript"> </script>
 
   
-   <script type="text/javascript" src="js/functions47.js"></script>
-    <script type="text/javascript" src="js/functions41.js"></script>
+   <script type="text/javascript" src="js/functionsVanila.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
     <script>
         (function () {
             
